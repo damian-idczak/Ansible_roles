@@ -1,0 +1,7 @@
+---
+- name: instalacja programow
+  package:
+    name: 
+      - unzip
+      - net-tools
+    state: present

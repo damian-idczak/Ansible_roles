@@ -1,0 +1,19 @@
+---
+# tasks file for use
+
+- name: utowrzenie user
+  group: 
+   name: panda
+   state: present
+
+- name: utowrzenie user
+  user: 
+   name: panda
+   state: present
+   groups: panda,sudo
+
+- name: Set authorized key taken from file
+  ansible.posix.authorized_key:
+    user: panda
+    state: present
+    key: "{{ lookup('file', '/home/vagrant/.ssh/authorized_keys') }}"
