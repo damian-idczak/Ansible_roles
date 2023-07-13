@@ -1,0 +1,8 @@
+---
+- name: Instalacja rol
+  hosts: nauka
+  become: true
+
+  roles:
+   - packages
+   - user
