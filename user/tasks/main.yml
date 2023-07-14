@@ -9,6 +9,7 @@
 - name: utowrzenie user
   user: 
    name: panda
+   shell: /bin/bash
    state: present
    groups: panda,sudo
 
