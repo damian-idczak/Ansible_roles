@@ -1,0 +1,18 @@
+- name: Instalacja paczek
+  pip:
+    name:
+    - docker-compose
+    - docker
+
+- name: Klonowanie repo
+  git:
+    repo: "{{ git_repository }}"
+    dest: "{{ deployment_path }}"
+    version: "{{ git_branch }}"
+
+- name: Run `docker-compose up`
+  docker_compose:
+    project_src: "{{ deployment_path }}"
+    build: true
+    debug: true
+  
